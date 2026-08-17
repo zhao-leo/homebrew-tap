@@ -8,8 +8,6 @@ class Ext4fuseT < Formula
   sha256 "496f6b3e425cf37ada4c4482ed7ecc8195516daa142adb43ffd78e1c38471bfb"
   license "GPL-2.0"
 
-  depends_on cask: "fuse-t"
-
   # Additional dependency
   # resource "" do
   #   url ""
@@ -19,6 +17,9 @@ class Ext4fuseT < Formula
   def install
     # Remove unrecognized options if they cause configure to fail
     # https://docs.brew.sh/rubydoc/Formula.html#std_configure_args-instance_method
+    unless File.exist?("/opt/homebrew/bin/fuse-t") || File.exist?("/usr/local/bin/fuse-t")
+        odie "fuse-t is required. Please install it first with: brew install --cask fuse-t"
+    end
     bin.install "ext4fuse"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
