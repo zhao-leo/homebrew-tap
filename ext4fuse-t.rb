@@ -17,10 +17,10 @@ class Ext4fuseT < Formula
   def install
     # Remove unrecognized options if they cause configure to fail
     # https://docs.brew.sh/rubydoc/Formula.html#std_configure_args-instance_method
-    unless File.exist?("/opt/homebrew/bin/fuse-t") || File.exist?("/usr/local/bin/fuse-t")
+    unless File.exist?("/Applications/fuse-t.app")
         odie "fuse-t is required. Please install it first with: brew install --cask fuse-t"
     end
-    bin.install "ext4fuse"
+    bin.install "ext4fuse-t"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
