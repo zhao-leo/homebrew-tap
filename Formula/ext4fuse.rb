@@ -24,6 +24,10 @@ class Ext4fuse < Formula
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
+  postflight_steps do
+    run "echo", args: ["succeed-postflight"]
+  end
+  
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
