@@ -1,7 +1,7 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://docs.brew.sh/rubydoc/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-class Ext4fuseT < Formula
+class Ext4fuse < Formula
   desc "EXT4 implementation for FUSE, linked to fuse-t"
   homepage "https://github.com/zhao-leo/ext4fuse-t"
   url "https://github.com/zhao-leo/ext4fuse-t/releases/download/v0.2.0/extfuse_0.2.0.tar.gz"
@@ -20,7 +20,7 @@ class Ext4fuseT < Formula
     unless File.exist?("/Applications/fuse-t.app")
         odie "fuse-t is required. Please install it first with: brew install --cask fuse-t"
     end
-    bin.install "ext4fuse-t"
+    bin.install "ext4fuse"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
