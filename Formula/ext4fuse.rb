@@ -23,10 +23,6 @@ class Ext4fuse < Formula
     bin.install "ext4fuse"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
-
-  postflight_steps do
-    run "osascript", args: ["-e", "'display notification \"这是通知的具体内容\" with title \"通知标题\" subtitle \"这是副标题\"'"]
-  end
   
   test do
     # `test do` will create, run in and delete a temporary directory.
